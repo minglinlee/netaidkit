@@ -1,4 +1,4 @@
-NAK_FEEDS = https://github.com/msgctl/netaidkit-feeds
+NAK_FEEDS = https://github.com/msgctl/netaidkit-feeds;1.0
 
 # Not really a proper Makefile, nor it ever can be. Sorry!
 .PHONY: all image submodules clean mrproper update_feeds configure \
