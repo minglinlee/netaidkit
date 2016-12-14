@@ -1,4 +1,4 @@
-NAK_FEEDS = src-git netaidkit_ap121f https://github.com/minglinlee/netaidkit-feeds.git;alfa-ap121f
+NAK_FEEDS = https://github.com/minglinlee/netaidkit-feeds.git;alfa-ap121f
 
 # Not really a proper Makefile, nor it ever can be. Sorry!
 .PHONY: all image submodules clean mrproper update_feeds configure \
@@ -38,9 +38,9 @@ mrproper: clean mrproper_nak clean_feeds
 	+cd openwrt && make distclean
 
 add_nak_feeds: submodules
-	(! grep -q netaidkit openwrt/feeds.conf.default && \
+	(! grep -q netaidkit_ap121f openwrt/feeds.conf.default && \
 		cd openwrt && sed -i \
-		'1 i\src-git netaidkit $(NAK_FEEDS)' \
+		'1 i\src-git netaidkit_ap121f $(NAK_FEEDS)' \
 		feeds.conf.default) || true
 
 update_feeds: add_nak_feeds submodules
